@@ -36,6 +36,14 @@ public class tester {
     Sorts.bubbleSort(arr3);
     System.out.println(Arrays.toString(arr3));
     System.out.println(check(arr3));
+    System.out.println();
+
+    System.out.println("repeats");
+    int[] arr4 = new int[] {6,8,9,17,4,6,10,8,13};
+    System.out.println(Arrays.toString(arr4));
+    Sorts.bubbleSort(arr4);
+    System.out.println(Arrays.toString(arr4));
+    System.out.println(check(arr4));
 
   }
 

@@ -38,4 +38,14 @@ public class tester {
     System.out.println(check(arr3));
 
   }
+
+  public static String check(int[] arr) {
+    for (int i = 0; i < arr.length-1; i++) {
+      if (arr[i] > arr[i+1]) {
+        return "you're baddd";
+      }
+    }
+    return "you gooddd";
+  }
+  
 }

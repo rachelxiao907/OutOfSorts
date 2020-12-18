@@ -19,4 +19,21 @@ public class Sorts{
     }
   }
 
+  public static void selectionSort(int[] data) {
+    for (int i = 0; i < data.length; i++) {
+      int smallest = i;
+      int min = data[i];
+      for (int j = i; j < data.length; j++) {
+        //repeated values should stay in order
+        if (data[j] < min) {
+          min = data[j];
+          smallest = j;
+        }
+      }
+      int temp = data[i];
+      data[i] = data[smallest];
+      data[smallest] = temp;
+    }
+  }
+
 }

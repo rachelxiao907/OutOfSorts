@@ -16,7 +16,7 @@ public class tester {
 
     System.out.println("seed 1000");
     int[] arr2 = new int[5];
-    Random rng2 = new Random(1000);//seed of 100 is stored.
+    Random rng2 = new Random(1000);
     for(int i =  0; i < arr2.length; i++ ){
       arr2[i] = rng2.nextInt() % 1000;
     }
@@ -28,7 +28,7 @@ public class tester {
 
     System.out.println("no seed");
     int[] arr3 = new int[5];
-    Random rng3 = new Random();//seed of 100 is stored.
+    Random rng3 = new Random();
     for(int i =  0; i < arr3.length; i++ ){
       arr3[i] = rng3.nextInt() % 1000;
     }
@@ -44,6 +44,26 @@ public class tester {
     Sorts.bubbleSort(arr4);
     System.out.println(Arrays.toString(arr4));
     System.out.println(check(arr4));
+
+    System.out.println();
+    System.out.println();
+    System.out.println("CUSTOM TESTS??");
+    //good if this doesn't print anything
+    int times = 100;
+    int size = 100;
+    for (int i = 0; i < times; i++) {
+      int[] a = new int[size];
+      Random num = new Random();//seed of 100 is stored.
+      for(int j =  0; j < a.length; j++ ){
+        a[j] = num.nextInt() % 1000;
+      }
+      int[] compare = a.clone();
+      Arrays.sort(compare);
+      Sorts.bubbleSort(a);
+      if (!Arrays.equals(a, compare)) {
+        System.out.println("error in test case " + i);
+      }
+    }
 
   }
 

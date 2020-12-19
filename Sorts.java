@@ -45,20 +45,19 @@ public class Sorts {
   *param data - the elements to be sorted.
   */
   //doesn't swap!!
-   public static void insertionSort(int[] data) {
-     for (int i = 0; i < data.length; i++) {
-       for (int j = 0; j < i; j++) {
-         int temp = data[i];
-         if (data[i] < data[j]) {
-           for (int x = j; x < i; x++) {
-             data[x+1] = data[x];
-           }
-           data[j] = temp;
-           j = i;
-           i = data.length;
-         }
-       }
-     }
-   }
+  public static void insertionSort(int[] data) {
+    for (int i = 0; i < data.length; i++) {
+      for (int j = 0; j < i; j++) {
+        if (data[i] < data[j]) {
+          int temp = data[i];
+          for (int x = i - 1; x >= j; x--) {
+            data[x+1] = data[x];
+          }
+          data[j] = temp;
+          j = i;
+        }
+      }
+    }
+  }
 
 }

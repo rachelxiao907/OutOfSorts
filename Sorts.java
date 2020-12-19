@@ -1,9 +1,11 @@
 import java.util.*;
 import java.io.*;
 
-public class Sorts{
-  //Bubble sort of an int array.
-  //@postcondition The array will be modified such that the elements will be in increasing order.
+public class Sorts {
+  /**Bubble sort of an int array.
+  *postcondition - The array will be modified such that the elements will be in increasing order.
+  *param data - the elements to be sorted.
+  */
   public static void bubbleSort(int[] data) {
     boolean sorted = false;
     for (int end = 0; !sorted; end++) {
@@ -19,14 +21,16 @@ public class Sorts{
     }
   }
 
+  /**selection sort of an int array.
+  *postcondition - The array will be modified such that the elements will be in increasing order.
+  *param data - the elements to be sorted.
+  */
   public static void selectionSort(int[] data) {
-    for (int i = 0; i < data.length; i++) {
+    for (int i = 0; i < data.length - 1; i++) {
       int smallest = i;
-      int min = data[i];
       for (int j = i; j < data.length; j++) {
         //repeated values should stay in order
-        if (data[j] < min) {
-          min = data[j];
+        if (data[j] < data[smallest]) {
           smallest = j;
         }
       }
@@ -35,5 +39,26 @@ public class Sorts{
       data[smallest] = temp;
     }
   }
+
+  /**insertion sort of an int array.
+  *postcondition - The array will be modified such that the elements will be in increasing order.
+  *param data - the elements to be sorted.
+  */
+  //doesn't swap!!
+   public static void insertionSort(int[] data) {
+     for (int i = 0; i < data.length; i++) {
+       for (int j = 0; j < i; j++) {
+         int temp = data[i];
+         if (data[i] < data[j]) {
+           for (int x = j; x < i; x++) {
+             data[x+1] = data[x];
+           }
+           data[j] = temp;
+           j = i;
+           i = data.length;
+         }
+       }
+     }
+   }
 
 }

@@ -24,7 +24,7 @@ public class Driver{
           randData[i] = i;
         }
       }else if(args[2].equals("reversed")){
-	      for (int i = 0; i < randData.length i++) {
+	      for (int i = 0; i < randData.length; i++) {
           randData[randData.length - 1 - i] = i;
         }
       }

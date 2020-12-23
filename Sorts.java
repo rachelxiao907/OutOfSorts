@@ -29,7 +29,6 @@ public class Sorts {
     for (int i = 0; i < data.length - 1; i++) {
       int smallest = i;
       for (int j = i; j < data.length; j++) {
-        //repeated values should stay in order
         if (data[j] < data[smallest]) {
           smallest = j;
         }

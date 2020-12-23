@@ -44,19 +44,17 @@ public class Sorts {
   *postcondition - The array will be modified such that the elements will be in increasing order.
   *param data - the elements to be sorted.
   */
-  //doesn't swap!!
   public static void insertionSort(int[] data) {
-    for (int i = 0; i < data.length; i++) {
-      for (int j = 0; j < i; j++) {
-        if (data[i] < data[j]) {
-          int temp = data[i];
-          for (int x = i - 1; x >= j; x--) {
-            data[x+1] = data[x];
-          }
-          data[j] = temp;
-          j = i;
-        }
+    for (int i = 1; i < data.length; i++) {
+      int temp = data[i];
+      int index = i;
+      //shift the elements over until you find the correct spot
+      for (int j = i - 1; temp < data[j]; j--) {
+         data[j+1] = data[j];
+         index = j;
       }
+      //then store the current element there
+      data[index] = temp;
     }
   }
 

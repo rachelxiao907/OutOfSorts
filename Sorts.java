@@ -49,7 +49,7 @@ public class Sorts {
       int temp = data[i];
       int index = i;
       //shift the elements over until you find the correct spot
-      for (int j = i - 1; temp < data[j]; j--) {
+      for (int j = i - 1; j >= 0 && temp < data[j]; j--) {
          data[j+1] = data[j];
          index = j;
       }
